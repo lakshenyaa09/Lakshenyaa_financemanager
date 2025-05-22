@@ -1,34 +1,21 @@
-// app.js
-// Main app to test personal finance manager
+const finance = require('./yourname_personalFinanceManager');
 
-const pfm = require('./yourname_personalFinanceManager');
+console.log("=== Personal Finance Manager ===");
 
-console.log("Testing Personal Finance Manager...");
+// Add some income and expense transactions
+finance.addTransaction("income", "Allowance", 200, "2025-04-10");
+finance.addTransaction("expense", "Groceries", 45.50, "2025-04-11");
+finance.addTransaction("income", "Tutoring", 150, "2025-04-12");
+finance.addTransaction("expense", "Transport", 25, "2025-04-13");
 
-// Add some transactions
-pfm.addTransaction({
-    type: "income",
-    amount: 3000,
-    category: "Salary",
-    date: "2025-05-01"
-});
+// View all transactions
+finance.viewTransactions();
 
-pfm.addTransaction({
-    type: "expense",
-    amount: 500,
-    category: "Groceries",
-    date: "2025-05-03"
-});
+// Calculate and show balance
+finance.calculateBalance();
 
-pfm.addTransaction({
-    type: "expense",
-    amount: 200,
-    category: "Transport",
-    date: "2025-05-05"
-});
+// View expenses for a specific category
+finance.viewExpensesByCategory("Groceries");
 
-// Display outputs
-console.log("All Transactions:", pfm.getTransactions());
-console.log("Balance:", pfm.calculateBalance());
-console.log("Groceries Expenses:", pfm.getExpensesByCategory("Groceries"));
-console.log("May 2025 Summary:", pfm.getMonthlySummary(5, 2025));
+// Show financial summary for a specific month
+finance.viewMonthlySummary(4, 2025); // April 2025
