@@ -1,4 +1,4 @@
-const finance = require('./yourname_personalFinanceManager');
+const finance = require('Lakshenyaa_financemanager');
 
 console.log("=== Personal Finance Manager ===");
 
